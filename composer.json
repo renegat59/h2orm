@@ -1,6 +1,8 @@
 {
     "name": "renegat59/h2orm",
     "type": "library",
+    "version": "0.0.1",
+    "description": "Simple Query Builder for PHP",
     "authors": [
         {
             "name": "Mateusz P",
