@@ -1,0 +1,17 @@
+{
+    "name": "renegat59/h2orm",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mateusz P",
+            "email": "bananq@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "H2Orm\\": "src",
+            "H2Orm\\tests\\": "tests"
+        }
+    }
+}
