@@ -2,7 +2,13 @@
 
 namespace H2Orm\connection;
 
+use H2Orm\exceptions\H2OrmException;
+use H2Orm\query\DeleteQuery;
+use H2Orm\query\InsertQuery;
+use H2Orm\query\SelectQuery;
+use H2Orm\query\UpdateQuery;
 use PDO;
+use PDOStatement;
 
 /**
  * Description of DbConnection
@@ -50,7 +56,7 @@ class DbConnection
         return (new DeleteQuery($this))->delete($table);
     }
 
-    public function prepare(string $query): \PDOStatement
+    public function prepare(string $query): PDOStatement
     {
         return $this->databaseHandler->prepare($query);
     }
@@ -73,19 +79,19 @@ class DbConnection
     private function validateConfig($config)
     {
         if (!isset($config['host'])) {
-            throw new F2Exception('Database host not provided');
+            throw new H2OrmException('Database host not provided');
         }
 
         if (!isset($config['user'])) {
-            throw new F2Exception('Database user not provided');
+            throw new H2OrmException('Database user not provided');
         }
 
         if (!isset($config['password'])) {
-            throw new F2Exception('Database password not provided');
+            throw new H2OrmException('Database password not provided');
         }
 
         if (!isset($config['schema'])) {
-            throw new F2Exception('Database schema not provided');
+            throw new H2OrmException('Database schema not provided');
         }
     }
 }
